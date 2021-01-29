@@ -6,7 +6,7 @@ Tänker skapa en hemsida där man kan bedöma recept som man testat samt jämfö
 ![begin](receptskisser.png)
 
 ## 3. Databas med ER-diagram (Bild på ER-diagram).
-![begin](er-diagram.jpeg)
+![begin](ER-diagram.png)
 
 ## 4. Arkitektur (Beskriv filer och mappar - vad gör/innehåller de?).
 
