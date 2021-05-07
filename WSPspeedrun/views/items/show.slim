@@ -6,10 +6,14 @@ main
             b = "Price: #{result['price']}$"
             b = "Stock: #{result['stock']}"
             p = result['description']
-            form action="/items/#{result['id']}/add_item" method="post"
-                input type="number" name="item_count"/
-                input type="submit" value="Add to cart"/
-            -   if session[:id] == 1
+            - if session[:id] != nil
+                form action="/items/#{result['id']}/add_item" method="post"
+                    input type="number" name="item_count"/
+                    input type="submit" value="Add to cart"/
+            - else
+                a href="/cart"
+                    input type="submit" value="Add to cart"/
+            - if session[:id] == 1
                     a href="/items/#{result['id']}/edit" 
                         input type="submit" value="Edit"
                     form action="/items/#{result['id']}/delete" method="post"

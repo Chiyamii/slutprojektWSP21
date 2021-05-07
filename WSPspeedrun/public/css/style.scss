@@ -51,6 +51,12 @@ body {
             }
         }
     }
+    aside {
+        display: flex;
+        justify-content: flex-end;
+        background: white;
+        width: 10rem;
+    }
     main {
         article {
             display: flex;

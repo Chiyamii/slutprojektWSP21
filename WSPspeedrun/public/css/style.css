@@ -95,6 +95,17 @@ body section article img {
      object-fit: cover;
 }
 
+body aside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  background: white;
+  width: 10rem;
+}
+
 body main article {
   display: -webkit-box;
   display: -ms-flexbox;
