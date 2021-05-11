@@ -24,11 +24,12 @@ body {
         padding: 0 3rem;
         }
     }
-    section {
+    .items {
         padding: 4rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        float: left;
         article {
             margin: 1rem;
             background: white;
@@ -51,11 +52,43 @@ body {
             }
         }
     }
+    .cart {
+        section {
+            padding: 4rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            float: left;
+            article {
+                margin: 1rem;
+                background: white;
+                display: flex;
+                flex-direction: column;
+                a {
+                    color: black;
+                    text-decoration: none;
+                    div {
+                        padding: 0 .5rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+                }
+                img {
+                    height: 14rem;
+                    width: 14rem;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
     aside {
-        display: flex;
-        justify-content: flex-end;
         background: white;
-        width: 10rem;
+        width: 18rem;
+        float: right;
+        position: sticky;
+        margin-top: -4.2rem;
+        height: 42.8rem;
     }
     main {
         article {

@@ -46,7 +46,7 @@ body header a {
   padding: 0 3rem;
 }
 
-body section {
+body .items {
   padding: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -56,9 +56,10 @@ body section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  float: left;
 }
 
-body section article {
+body .items article {
   margin: 1rem;
   background: white;
   display: -webkit-box;
@@ -70,12 +71,12 @@ body section article {
           flex-direction: column;
 }
 
-body section article a {
+body .items article a {
   color: black;
   text-decoration: none;
 }
 
-body section article a div {
+body .items article a div {
   padding: 0 .5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -88,7 +89,57 @@ body section article a div {
           justify-content: space-between;
 }
 
-body section article img {
+body .items article img {
+  height: 14rem;
+  width: 14rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body .cart section {
+  padding: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  float: left;
+}
+
+body .cart section article {
+  margin: 1rem;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .cart section article a {
+  color: black;
+  text-decoration: none;
+}
+
+body .cart section article a div {
+  padding: 0 .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .cart section article img {
   height: 14rem;
   width: 14rem;
   -o-object-fit: cover;
@@ -96,14 +147,13 @@ body section article img {
 }
 
 body aside {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
   background: white;
-  width: 10rem;
+  width: 18rem;
+  float: right;
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top: -4.2rem;
+  height: 42.8rem;
 }
 
 body main article {

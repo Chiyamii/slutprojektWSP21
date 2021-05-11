@@ -1,25 +1,29 @@
-header 
-    h2 Your cart
+section class="cart"
+    header 
+        h2 Your cart
 
+    - if session[:id] != nil
+        section
+            - total = 0
+            - i = 0
+            - cart.each do |cartitem|
+                article 
+                    a href="items/#{cartitem['id']}"
+                        - item = items[i][0]
+                        div
+                            b = item['name']
+                            p = "Count: #{cartitem['item_count']}"
+                        p style="display: flex; justify-content: flex-end;" = "Total price: #{item['price']*cartitem['item_count']}"
+                        - total += item['price']*cartitem['item_count']
+                        img src="/#{item['image']}"
+                        - i += 1
+    - else
+        div
+            p You have to log in to use the cart.  
+            a href="/login" 
+                p Login.       
 - if session[:id] != nil
-    section
-        - total = 0
-        - i = 0
-        - cart.each do |cartitem|
-            article 
-                a href="items/#{cartitem['id']}"
-                    - item = items[i][0]
-                    div
-                        b = item['name']
-                        p = "Count: #{cartitem['item_count']}"
-                    p style="display: flex; justify-content: flex-end;" = "Total price: #{item['price']*cartitem['item_count']}"
-                    - total += item['price']*cartitem['item_count']
-                    img src="/#{item['image']}"
-                    - i += 1
     aside 
+        h3 Total
         p = "#{total}$"
-- else
-    div
-        p You have to log in to use the cart.  
-        a href="/login" 
-            p Login.       
+        button type="submit" Checkout 
