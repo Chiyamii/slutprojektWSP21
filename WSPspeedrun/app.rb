@@ -5,14 +5,29 @@ require 'bcrypt'
 require_relative 'helper.rb'
 enable :sessions
 
+before do
+    if session[:id] == nil 
+        if request.path_info != '/' && request.path_info != '/error' && request.path_info != '/login' && request.path_info != '/register' && request.path_info != '/items'
+            session[:error] = "You need to log in to see this"
+            redirect('/error')
+        end
+    else
+
+    end
+end
+  
+
+get('/error') do
+    slim(:error)
+end
 
 get('/') do
     slim(:index)
 end 
 
-get('/error') do
-    "<h1>Something went wrong</h1>"
-end
+# get('/error') do
+#     "<h1>Something went wrong</h1>"
+# end
   
 get('/items') do
     db = connect_db("db/webshop.db")
@@ -46,9 +61,7 @@ post('/items/new') do
     #Lägger in i många till många-tabellen
     category = params[:cat]
     id_category = db.execute("SELECT * FROM categories WHERE category = ?",category).first
-    p id_category
     item_id = db.execute("SELECT id FROM items ORDER BY id DESC LIMIT 1").first
-    p item_id
     db.execute("INSERT INTO categories_items_relation (item_id,category_id) VALUES (?,?)",item_id[0],id_category[0])
     redirect('/items')
 end

@@ -5,9 +5,13 @@ body {
         padding: 0 2rem 0 2rem;
         background: coral;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
+        h1 {
+            flex-grow: 1;
+        }
         a {
+            margin: 1rem;
             text-decoration: none;
             color: black;
         }

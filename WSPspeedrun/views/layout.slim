@@ -11,8 +11,13 @@ html lang="en"
     nav
         h1 Cat toys
         a href="/items" Items
-        a href="/cart" Cart 
-        a href="/login" Login
-        a href="/register" Register 
+        - if session[:id] != nil
+            a href="/cart" Cart 
+        - if session[:id] != nil
+            a href="/" Log out
+            - session[:id] = nil
+        - else 
+            a href="/login" Log in
+            a href="/register" Register 
 
     ==yield 
