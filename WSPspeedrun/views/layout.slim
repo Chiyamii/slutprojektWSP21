@@ -9,13 +9,16 @@ html lang="en"
     body 
 
     nav
-        h1 Cat toys
+        h1 
+            a href="/" Cat toys
         a href="/items" Items
         - if session[:id] != nil
             a href="/cart" Cart 
         - if session[:id] != nil
-            a href="/" Log out
-            - session[:id] = nil
+            a
+                form action="/logout" method="post"  
+                    input type="submit" value="Log out"/
+            
         - else 
             a href="/login" Log in
             a href="/register" Register 
