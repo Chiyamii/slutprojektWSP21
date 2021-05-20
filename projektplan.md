@@ -24,14 +24,17 @@ app.rb innehåller alla routes
 model.rb innehåller funktioner
 layout.slim visar navbaren till sidorna
 index.slim visar en basic landing page
+
 error.slim visar ett felmeddelande beroende på vad man gjort fel
 /users -mappen innehåller slimfilerna till login och register
     login.slim visar en inloggningssida
     register.slim visar en registreringssida
+    
 /items -mappen innehåller alla funktioner relaterade till itemsen såsom:
     index.slim visar alla items
     new.slim visar ett formulär för att lägga till items
     edit.slim visar ett formulär för att redigera ett item
     show.slim visar ett enskilt item
+    
 /cart -mappen innehåller slimfilerna till det i shoppingkarten
     index.slim visar allt man har i korgen
