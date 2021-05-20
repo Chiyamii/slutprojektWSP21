@@ -32,6 +32,9 @@ module Helper
             password_digest = result["password_digest"]
             id = result["id"]
             if BCrypt::Password.new(password_digest) == password
+                p username
+                session[:user] = username
+                p session[:user]
                 session[:id] = id
                 redirect('/items')
             else

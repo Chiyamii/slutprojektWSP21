@@ -16,6 +16,7 @@ html lang="en"
             a href="/cart" Cart 
         - if session[:id] != nil
             a
+                a = "Logged in as #{session[:user]}"
                 form action="/logout" method="post"  
                     input type="submit" value="Log out"/
             
